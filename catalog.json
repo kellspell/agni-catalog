@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "serial": 3,
+  "serial": 4,
   "updated": "2026-11-01",
   "models": [
     {
@@ -256,7 +256,8 @@
           "sha256": "3941909123de7a4eeeca0c32bbf3b36844d94c0fd4f125656308840ace793fdb",
           "sizeBytes": 144001438
         }
-      }
+      },
+      "section": "chat"
     },
     {
       "id": "anythingllm",
@@ -294,7 +295,198 @@
           "sha256": "7f6ec04b07559178cd749d9ef6cb3ef04e960b676e155c42d3dcb12fa13451b4",
           "sizeBytes": 550006618
         }
+      },
+      "section": "chat"
+    },
+    {
+      "id": "buzz",
+      "section": "tool",
+      "name": "Buzz",
+      "publisher": "Chidi Williams",
+      "description": "Turns recordings of meetings, interviews, lectures and voice notes into text, and can translate them. Everything happens on your computer.",
+      "tags": [
+        "Transcription",
+        "Translation",
+        "Offline"
+      ],
+      "license": {
+        "name": "MIT",
+        "commercial": "yes"
+      },
+      "homepage": "https://github.com/chidiwilliams/buzz",
+      "version": "1.4.5",
+      "setupHint": "Buzz downloads its own speech model the first time you transcribe something; it doesn't use your Agni models.",
+      "downloads": {
+        "linux": {
+          "kind": "page",
+          "url": "https://flathub.org/apps/io.github.chidiwilliams.Buzz",
+          "note": "Opens Buzz on Flathub, the Linux app store. Install it from there."
+        },
+        "windows": {
+          "kind": "page",
+          "url": "https://github.com/chidiwilliams/buzz/releases/latest",
+          "note": "Opens the official download page. The Windows installer is about 2.7 GB in three parts: download all three to the same folder, then run the .exe."
+        },
+        "macos": {
+          "kind": "page",
+          "url": "https://github.com/chidiwilliams/buzz/releases/latest",
+          "note": "Opens the official download page. Pick the ARM64 file for Apple silicon Macs, or X64 for Intel Macs."
+        }
       }
+    },
+    {
+      "id": "writing-tools",
+      "section": "tool",
+      "name": "Writing Tools",
+      "publisher": "Jesai (theJayTea)",
+      "description": "Select text in any app and press a shortcut to proofread, rewrite, shorten or summarise it with your local AI.",
+      "tags": [
+        "Grammar",
+        "Rewriting",
+        "Works in any app"
+      ],
+      "license": {
+        "name": "GPL-3.0",
+        "commercial": "yes",
+        "note": "Free to use, including at work. GPL terms apply only if you modify and share it."
+      },
+      "homepage": "https://github.com/theJayTea/WritingTools",
+      "version": "9 (Windows), 6.1 (macOS)",
+      "setupHint": "In its settings, choose Ollama as the AI provider and pick one of your Agni models.",
+      "downloads": {
+        "windows": {
+          "kind": "page",
+          "url": "https://github.com/theJayTea/WritingTools/releases/latest",
+          "note": "Opens the official download page. Download the Windows .zip, unzip it and run Writing Tools."
+        },
+        "macos": {
+          "kind": "page",
+          "url": "https://github.com/theJayTea/WritingTools/releases/latest",
+          "note": "Opens the official download page. Download the macOS .zip and move the app to your Applications folder."
+        }
+      }
+    },
+    {
+      "id": "page-assist",
+      "section": "addon",
+      "name": "Page Assist",
+      "publisher": "n4ze3m",
+      "description": "A sidebar in your web browser that uses your local models to summarise the page you're reading, answer questions about it, or translate it.",
+      "tags": [
+        "Browser",
+        "Summarise pages"
+      ],
+      "license": {
+        "name": "MIT",
+        "commercial": "yes"
+      },
+      "homepage": "https://github.com/n4ze3m/page-assist",
+      "stores": [
+        {
+          "label": "Chrome",
+          "url": "https://chromewebstore.google.com/detail/page-assist-a-web-ui-for/jfgfiigpkhlkbnfnbobbkinehhfdhndo"
+        },
+        {
+          "label": "Edge",
+          "url": "https://microsoftedge.microsoft.com/addons/detail/page-assist-a-web-ui-fo/ogkogooadflifpmmidmhjedogicnhooa"
+        },
+        {
+          "label": "Firefox",
+          "url": "https://addons.mozilla.org/en-US/firefox/addon/page-assist/"
+        }
+      ],
+      "setupSteps": [
+        "Add it to your browser from its store page.",
+        "Open the sidebar with Ctrl+Shift+Y, or from the right-click menu.",
+        "It finds Agni's engine on its own. Pick one of your models and start chatting."
+      ]
+    },
+    {
+      "id": "continue",
+      "section": "addon",
+      "name": "Continue",
+      "publisher": "Continue",
+      "description": "A coding assistant inside VS Code and JetBrains editors: chat about your code, get suggested edits and autocomplete from your local models.",
+      "tags": [
+        "Coding",
+        "VS Code",
+        "JetBrains"
+      ],
+      "license": {
+        "name": "Apache 2.0",
+        "commercial": "yes"
+      },
+      "homepage": "https://github.com/continuedev/continue",
+      "stores": [
+        {
+          "label": "VS Code",
+          "url": "https://marketplace.visualstudio.com/items?itemName=Continue.continue"
+        },
+        {
+          "label": "JetBrains",
+          "url": "https://plugins.jetbrains.com/plugin/22707-continue"
+        }
+      ],
+      "setupSteps": [
+        "Install it in VS Code or your JetBrains editor.",
+        "In Continue's settings, add a model and choose Ollama as the provider.",
+        "Pick one of your Agni models. Qwen 2.5 Coder works well for code."
+      ]
+    },
+    {
+      "id": "cline",
+      "section": "addon",
+      "name": "Cline",
+      "publisher": "Cline",
+      "description": "A coding agent in VS Code that plans changes, edits files and runs commands for you step by step, asking for your approval along the way.",
+      "tags": [
+        "Coding agent",
+        "VS Code"
+      ],
+      "license": {
+        "name": "Apache 2.0",
+        "commercial": "yes"
+      },
+      "homepage": "https://github.com/cline/cline",
+      "stores": [
+        {
+          "label": "VS Code",
+          "url": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev"
+        }
+      ],
+      "setupSteps": [
+        "Install it in VS Code.",
+        "In Cline's settings, choose Ollama as the API provider.",
+        "Pick one of your models. Larger models (7B and up) handle agent tasks much better."
+      ]
+    },
+    {
+      "id": "obsidian-copilot",
+      "section": "addon",
+      "name": "Copilot for Obsidian",
+      "publisher": "Logan Yang",
+      "description": "AI inside the Obsidian notes app. Its Quick Chat and Quick Ask work with your local models to answer questions about your notes and help you draft.",
+      "tags": [
+        "Notes",
+        "Obsidian"
+      ],
+      "license": {
+        "name": "AGPL-3.0",
+        "commercial": "conditional",
+        "note": "Free to use. AGPL terms apply if you modify it and share it, including over a network. Some agent features are paid."
+      },
+      "homepage": "https://github.com/logancyang/obsidian-copilot",
+      "stores": [
+        {
+          "label": "Obsidian",
+          "url": "https://obsidian.md/plugins?id=copilot"
+        }
+      ],
+      "setupSteps": [
+        "In Obsidian, open Settings, then Community plugins, and install Copilot.",
+        "In Copilot's settings, add a model with Ollama as the provider.",
+        "Use Quick Chat or Quick Ask with one of your Agni models."
+      ]
     }
   ]
 }
