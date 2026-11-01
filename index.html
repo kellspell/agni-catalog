@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agni AI Catalog</title>
+  <style>
+    :root { color-scheme: light dark; --bg: #f6f7fb; --text: #1b1f2a; --muted: #5d6475; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #0b0d12; --text: #e8ecf5; --muted: #8a93a8; } }
+    body { margin: 0; padding: 48px 16px; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, sans-serif; }
+    main { max-width: 640px; margin: 0 auto; }
+    p { color: var(--muted); }
+    a { color: #6c8cff; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Agni AI Catalog</h1>
+    <p>The curated, signed model catalog for the Agni AI Browser. It lists metadata only: every model is downloaded
+      directly from Hugging Face or ModelScope.</p>
+    <p><a href="catalog.json">catalog.json</a> · <a href="catalog.json.sig">signature</a> ·
+      <a href="public-key.txt">public key</a></p>
+  </main>
+</body>
+</html>
