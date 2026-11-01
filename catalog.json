@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "serial": 4,
+  "serial": 5,
   "updated": "2026-11-01",
   "models": [
     {
@@ -486,6 +486,167 @@
         "In Obsidian, open Settings, then Community plugins, and install Copilot.",
         "In Copilot's settings, add a model with Ollama as the provider.",
         "Use Quick Chat or Quick Ask with one of your Agni models."
+      ]
+    }
+  ],
+  "imageModels": [
+    {
+      "id": "sd15",
+      "name": "Stable Diffusion 1.5",
+      "vendor": "Stability AI & Runway",
+      "description": "The classic image model: quick and light, good for illustrations, concept art and simple photos at 512 pixels. A good first image model for any computer.",
+      "tags": [
+        "Fast",
+        "Illustrations"
+      ],
+      "license": {
+        "name": "CreativeML OpenRAIL-M",
+        "commercial": "conditional",
+        "note": "Commercial use is allowed, but the license forbids certain harmful uses. Read it before using images for work."
+      },
+      "paramsB": 0.98,
+      "requirements": {
+        "minRamGb": 8,
+        "recommendedRamGb": 16,
+        "gpuVramGb": 4,
+        "cpuFriendly": true
+      },
+      "defaults": {
+        "width": 512,
+        "height": 512,
+        "steps": 20,
+        "cfgScale": 7,
+        "sampler": "euler_a",
+        "negativePrompt": "blurry, low quality, distorted, watermark"
+      },
+      "sizes": [
+        [
+          512,
+          512
+        ],
+        [
+          512,
+          768
+        ],
+        [
+          768,
+          512
+        ]
+      ],
+      "files": [
+        {
+          "role": "model",
+          "file": "stable-diffusion-v1-5-pruned-emaonly-Q8_0.gguf",
+          "sha256": "d0555243938c62faeefb4ac93f6c7a053ad373a4290c5256bce229aeb193bf94",
+          "sizeBytes": 1763578176,
+          "mirrors": [
+            {
+              "hub": "huggingface",
+              "repo": "second-state/stable-diffusion-v1-5-GGUF"
+            },
+            {
+              "hub": "modelscope",
+              "repo": "second-state/stable-diffusion-v1-5-GGUF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "z-image-turbo",
+      "name": "Z-Image Turbo",
+      "vendor": "Alibaba (Tongyi Lab)",
+      "description": "High-quality, photorealistic images in just 8 steps, and it can write readable text inside pictures. Much faster with a graphics card.",
+      "tags": [
+        "Photorealistic",
+        "Text in images"
+      ],
+      "license": {
+        "name": "Apache 2.0",
+        "commercial": "yes"
+      },
+      "paramsB": 6.15,
+      "requirements": {
+        "minRamGb": 16,
+        "recommendedRamGb": 32,
+        "gpuVramGb": 6,
+        "cpuFriendly": false
+      },
+      "defaults": {
+        "width": 1024,
+        "height": 1024,
+        "steps": 8,
+        "cfgScale": 1,
+        "sampler": "",
+        "negativePrompt": ""
+      },
+      "sizes": [
+        [
+          768,
+          768
+        ],
+        [
+          1024,
+          1024
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          1024,
+          768
+        ]
+      ],
+      "files": [
+        {
+          "role": "diffusion",
+          "file": "z_image_turbo-Q4_K.gguf",
+          "sha256": "14b375ab4f226bc5378f68f37e899ef3c2242b8541e61e2bc1aff40976086fbd",
+          "sizeBytes": 3864250304,
+          "mirrors": [
+            {
+              "hub": "huggingface",
+              "repo": "leejet/Z-Image-Turbo-GGUF"
+            },
+            {
+              "hub": "modelscope",
+              "repo": "leejet/Z-Image-Turbo-GGUF"
+            }
+          ]
+        },
+        {
+          "role": "llm",
+          "file": "Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+          "sha256": "3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597",
+          "sizeBytes": 2497281120,
+          "mirrors": [
+            {
+              "hub": "huggingface",
+              "repo": "unsloth/Qwen3-4B-Instruct-2507-GGUF"
+            },
+            {
+              "hub": "modelscope",
+              "repo": "unsloth/Qwen3-4B-Instruct-2507-GGUF"
+            }
+          ]
+        },
+        {
+          "role": "vae",
+          "file": "split_files/vae/ae.safetensors",
+          "sha256": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38",
+          "sizeBytes": 335304388,
+          "mirrors": [
+            {
+              "hub": "huggingface",
+              "repo": "Comfy-Org/z_image_turbo"
+            },
+            {
+              "hub": "modelscope",
+              "repo": "Comfy-Org/z_image_turbo"
+            }
+          ]
+        }
       ]
     }
   ]
