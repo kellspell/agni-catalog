@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "serial": 2,
+  "serial": 3,
   "updated": "2026-11-01",
   "models": [
     {
@@ -215,6 +215,85 @@
             "repo": "Qwen/Qwen2.5-Coder-7B-Instruct-GGUF"
           }
         ]
+      }
+    }
+  ],
+  "apps": [
+    {
+      "id": "hollama",
+      "name": "Hollama",
+      "publisher": "Fernando Maclen",
+      "description": "A clean, minimal chat window made for local models. Keep several conversations, write custom instructions, and switch models in a click.",
+      "tags": [
+        "Simple",
+        "Made for local AI"
+      ],
+      "license": {
+        "name": "MIT",
+        "commercial": "yes"
+      },
+      "homepage": "https://github.com/fmaclen/hollama",
+      "version": "0.37.0",
+      "electron": true,
+      "setupHint": "Hollama connects to Agni's engine on its own. Pick one of your models at the top of a new chat and start typing.",
+      "downloads": {
+        "linux": {
+          "kind": "archive",
+          "url": "https://github.com/fmaclen/hollama/releases/download/0.37.0/Hollama_0.37.0-linux-x64.tar.gz",
+          "sha256": "1ed38ed090339238c4c602a4e46a234aa5fbd31df66eac24dcc8f8756fabc921",
+          "sizeBytes": 126255866,
+          "run": "Hollama_0.37.0-linux-x64/hollama"
+        },
+        "windows": {
+          "kind": "installer",
+          "url": "https://github.com/fmaclen/hollama/releases/download/0.37.0/Hollama_0.37.0-win-x64.exe",
+          "sha256": "654733821ddf5e6892ac1f02f42e64a8ad89c0053e6cf1e9a050bf99892c6f71",
+          "sizeBytes": 118602736
+        },
+        "macos": {
+          "kind": "installer",
+          "url": "https://github.com/fmaclen/hollama/releases/download/0.37.0/Hollama_0.37.0-mac-x64.dmg",
+          "sha256": "3941909123de7a4eeeca0c32bbf3b36844d94c0fd4f125656308840ace793fdb",
+          "sizeBytes": 144001438
+        }
+      }
+    },
+    {
+      "id": "anythingllm",
+      "name": "AnythingLLM",
+      "publisher": "Mintplex Labs",
+      "description": "A full workspace for your AI: chat with your own documents and PDFs, organise projects, and use helpful agents. Everything stays on your computer.",
+      "tags": [
+        "Chat with documents",
+        "Workspaces"
+      ],
+      "license": {
+        "name": "MIT",
+        "commercial": "yes"
+      },
+      "homepage": "https://github.com/Mintplex-Labs/anything-llm",
+      "version": "1.19.0",
+      "electron": true,
+      "setupHint": "The first time it opens, choose \"Ollama\" when it asks for an AI provider. It will find the models you installed in Agni.",
+      "downloads": {
+        "linux": {
+          "kind": "appimage",
+          "url": "https://github.com/Mintplex-Labs/anything-llm/releases/download/v1.19.0/AnythingLLMDesktop.AppImage",
+          "sha256": "8b407abafa281e5f2b58af04399011784894a5a0414fb58eb32062dad6cc8ef2",
+          "sizeBytes": 905441828
+        },
+        "windows": {
+          "kind": "installer",
+          "url": "https://github.com/Mintplex-Labs/anything-llm/releases/download/v1.19.0/AnythingLLMDesktop.exe",
+          "sha256": "743d10ddf920087b46cd614cafd2e0e31550089405436f00cbd827c43ca4c90a",
+          "sizeBytes": 403299096
+        },
+        "macos": {
+          "kind": "installer",
+          "url": "https://github.com/Mintplex-Labs/anything-llm/releases/download/v1.19.0/AnythingLLMDesktop.dmg",
+          "sha256": "7f6ec04b07559178cd749d9ef6cb3ef04e960b676e155c42d3dcb12fa13451b4",
+          "sizeBytes": 550006618
+        }
       }
     }
   ]
