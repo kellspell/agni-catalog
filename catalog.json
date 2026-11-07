@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "serial": 5,
-  "updated": "2026-11-01",
+  "serial": 6,
+  "updated": "2026-11-04",
   "models": [
     {
       "name": "Qwen 2.5 Mini",
@@ -646,6 +646,189 @@
               "repo": "Comfy-Org/z_image_turbo"
             }
           ]
+        }
+      ]
+    }
+  ],
+  "connectors": [
+    {
+      "id": "files",
+      "name": "Files",
+      "publisher": "Model Context Protocol",
+      "category": "files",
+      "plan": "free",
+      "description": "Lets your model read, search, create and organise files, but only inside the folders you choose. It asks you before changing anything.",
+      "tags": [
+        "Read & write files",
+        "Folders you pick"
+      ],
+      "license": {
+        "name": "Apache-2.0 / MIT",
+        "commercial": "yes"
+      },
+      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+      "package": {
+        "registry": "npm",
+        "name": "@modelcontextprotocol/server-filesystem",
+        "version": "2.0.0",
+        "bin": "mcp-server-filesystem",
+        "before": "2026-10-21"
+      },
+      "args": [
+        "{folders}"
+      ],
+      "settings": [
+        {
+          "key": "folders",
+          "kind": "folders",
+          "label": "Folders it may use",
+          "help": "The model can only see and change files inside these folders.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "web",
+      "name": "Web pages",
+      "publisher": "Model Context Protocol",
+      "category": "web",
+      "plan": "free",
+      "description": "Reads a web page you point it to and gives your model its text, so it can summarise articles, docs and news. Respects sites' robots.txt rules.",
+      "tags": [
+        "Read any web page",
+        "Uses the internet"
+      ],
+      "license": {
+        "name": "Apache-2.0 / MIT",
+        "commercial": "yes"
+      },
+      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+      "package": {
+        "registry": "pypi",
+        "name": "mcp-server-fetch",
+        "version": "2026.10.19",
+        "bin": "mcp-server-fetch",
+        "before": "2026-10-21"
+      },
+      "args": [],
+      "settings": []
+    },
+    {
+      "id": "time",
+      "name": "Date & time",
+      "publisher": "Model Context Protocol",
+      "category": "productivity",
+      "plan": "free",
+      "description": "Tells your model today's date and the time anywhere in the world, and converts between time zones.",
+      "tags": [
+        "Time zones",
+        "Lightweight"
+      ],
+      "license": {
+        "name": "Apache-2.0 / MIT",
+        "commercial": "yes"
+      },
+      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/time",
+      "package": {
+        "registry": "pypi",
+        "name": "mcp-server-time",
+        "version": "2026.10.19",
+        "bin": "mcp-server-time",
+        "before": "2026-10-21"
+      },
+      "args": [],
+      "settings": []
+    },
+    {
+      "id": "documents",
+      "name": "Documents",
+      "publisher": "Microsoft",
+      "category": "documents",
+      "plan": "plus",
+      "description": "Turns PDFs, Word, Excel and PowerPoint files, web pages and more into text your model can read, summarise and answer questions about.",
+      "tags": [
+        "PDF",
+        "Word",
+        "Excel",
+        "PowerPoint"
+      ],
+      "license": {
+        "name": "MIT",
+        "commercial": "yes"
+      },
+      "homepage": "https://github.com/microsoft/markitdown",
+      "package": {
+        "registry": "pypi",
+        "name": "markitdown-mcp",
+        "version": "0.0.1a7",
+        "bin": "markitdown-mcp",
+        "before": "2026-10-21"
+      },
+      "args": [],
+      "settings": []
+    },
+    {
+      "id": "memory",
+      "name": "Memory",
+      "publisher": "Model Context Protocol",
+      "category": "knowledge",
+      "plan": "plus",
+      "description": "Gives your model a long-term memory: it can save facts about people, projects and preferences and recall them in later chats. Stored only on this computer.",
+      "tags": [
+        "Remembers across chats",
+        "Stays on this computer"
+      ],
+      "license": {
+        "name": "Apache-2.0 / MIT",
+        "commercial": "yes"
+      },
+      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+      "package": {
+        "registry": "npm",
+        "name": "@modelcontextprotocol/server-memory",
+        "version": "2.0.0",
+        "bin": "mcp-server-memory",
+        "before": "2026-10-21"
+      },
+      "env": {
+        "MEMORY_FILE_PATH": "{data}/memory.jsonl"
+      },
+      "args": [],
+      "settings": []
+    },
+    {
+      "id": "git",
+      "name": "Git",
+      "publisher": "Model Context Protocol",
+      "category": "developer",
+      "plan": "plus",
+      "description": "Lets your model look through a Git project: history, changes and branches, and make commits when you allow it. Needs Git installed on this computer.",
+      "tags": [
+        "For developers",
+        "Needs Git"
+      ],
+      "license": {
+        "name": "Apache-2.0 / MIT",
+        "commercial": "yes"
+      },
+      "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+      "package": {
+        "registry": "pypi",
+        "name": "mcp-server-git",
+        "version": "2026.10.19",
+        "bin": "mcp-server-git",
+        "before": "2026-10-21"
+      },
+      "args": [
+        "--repository={repository}"
+      ],
+      "settings": [
+        {
+          "key": "repository",
+          "kind": "folder",
+          "label": "Project folder",
+          "help": "The Git project it works on.",
+          "required": true
         }
       ]
     }
