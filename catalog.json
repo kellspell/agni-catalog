@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "serial": 6,
-  "updated": "2026-11-04",
+  "serial": 7,
+  "updated": "2026-11-13",
   "models": [
     {
       "name": "Qwen 2.5 Mini",
@@ -714,6 +714,38 @@
       "settings": []
     },
     {
+      "id": "browser",
+      "name": "Browser",
+      "publisher": "Microsoft",
+      "category": "web",
+      "plan": "plus",
+      "description": "Lets your models use a real web browser: open pages, click, type, fill in forms and take screenshots. It uses the Google Chrome already on this computer, with a separate profile, so your own browsing stays apart.",
+      "tags": [
+        "Clicks and types for you",
+        "Needs Google Chrome"
+      ],
+      "license": {
+        "name": "Apache-2.0",
+        "commercial": "yes"
+      },
+      "homepage": "https://github.com/microsoft/playwright-mcp",
+      "package": {
+        "registry": "npm",
+        "name": "@playwright/mcp",
+        "version": "0.0.85",
+        "bin": "playwright-mcp",
+        "before": "2026-11-12"
+      },
+      "args": [
+        "--user-data-dir",
+        "{data}/profile",
+        "--output-dir",
+        "{data}/output"
+      ],
+      "env": {},
+      "settings": []
+    },
+    {
       "id": "time",
       "name": "Date & time",
       "publisher": "Model Context Protocol",
@@ -829,6 +861,100 @@
           "label": "Project folder",
           "help": "The Git project it works on.",
           "required": true
+        }
+      ]
+    }
+  ],
+  "videoModels": [
+    {
+      "id": "wan2-1-t2v-1-3b",
+      "name": "Wan 2.1 Video",
+      "vendor": "Alibaba (Wan)",
+      "description": "Turns a description into a short video clip, about 2 to 5 seconds long. The smallest Wan model, so it runs on a mid-range graphics card; each clip takes a few minutes.",
+      "tags": [
+        "Text to video",
+        "480p"
+      ],
+      "license": {
+        "name": "Apache 2.0",
+        "commercial": "yes"
+      },
+      "paramsB": 1.3,
+      "requirements": {
+        "minRamGb": 16,
+        "recommendedRamGb": 32,
+        "gpuVramGb": 8,
+        "cpuFriendly": false
+      },
+      "defaults": {
+        "width": 832,
+        "height": 480,
+        "steps": 30,
+        "cfgScale": 6,
+        "sampler": "euler",
+        "negativePrompt": "blurry, low quality, distorted, deformed, static, still image, watermark, text, subtitles"
+      },
+      "sizes": [
+        [
+          832,
+          480
+        ],
+        [
+          480,
+          832
+        ],
+        [
+          624,
+          624
+        ]
+      ],
+      "video": {
+        "frames": 33,
+        "frameChoices": [
+          17,
+          33,
+          49,
+          81
+        ],
+        "fps": 16,
+        "flowShift": 3
+      },
+      "files": [
+        {
+          "role": "diffusion",
+          "file": "split_files/diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors",
+          "sha256": "be531024cd9018cb5b48c40cfbb6a6191645b1c792eb8bf4f8c1c6e10f924dc5",
+          "sizeBytes": 2838303560,
+          "mirrors": [
+            {
+              "hub": "huggingface",
+              "repo": "Comfy-Org/Wan-2.1"
+            }
+          ]
+        },
+        {
+          "role": "vae",
+          "file": "split_files/vae/wan_2.1_vae.safetensors",
+          "sha256": "2fc39d31359a4b0a64f55876d8ff7fa8d780956ae2cb13463b0223e15148976b",
+          "sizeBytes": 253815318,
+          "mirrors": [
+            {
+              "hub": "huggingface",
+              "repo": "Comfy-Org/Wan-2.1"
+            }
+          ]
+        },
+        {
+          "role": "t5xxl",
+          "file": "umt5-xxl-encoder-Q4_K_M.gguf",
+          "sha256": "17cf97a5bbbc60a646d6105b832b6f657ce904a8a1ad970e4b59df0c67584a40",
+          "sizeBytes": 3655145312,
+          "mirrors": [
+            {
+              "hub": "huggingface",
+              "repo": "city96/umt5-xxl-encoder-gguf"
+            }
+          ]
         }
       ]
     }
